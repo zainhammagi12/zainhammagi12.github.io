@@ -121,7 +121,7 @@ nav.wrap{
 
 @media (max-width:860px){
   .hero-grid{ flex-direction:column; }
-  .hero-photo{ order:-1; justify-content:center; flex-basis:auto; }
+  .hero-photo{ justify-content:center; flex-basis:auto; }
 }
 
 .photo-frame{
