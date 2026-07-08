@@ -109,8 +109,41 @@ nav.wrap{
 }
 
 /* Hero */
-.hero{ padding:96px 0 64px; }
-@media (max-width:640px){ .hero{ padding:56px 0 40px; } }
+.hero{ padding:80px 0 64px; }
+@media (max-width:640px){ .hero{ padding:48px 0 40px; } }
+
+.hero-grid{
+  display:grid; grid-template-columns:1.3fr 0.9fr; gap:48px; align-items:center;
+  margin-bottom:56px;
+}
+@media (max-width:860px){
+  .hero-grid{ grid-template-columns:1fr; gap:36px; }
+  .hero-photo{ order:2; }
+  .hero-copy{ order:1; }
+}
+
+.hero-photo{ display:flex; justify-content:center; }
+.photo-frame{
+  position:relative; width:100%; max-width:320px;
+  border:1px solid var(--line); border-radius:6px;
+  background:var(--card); padding:10px;
+  box-shadow:0 14px 32px rgba(27,36,48,0.10);
+}
+.photo-frame img{
+  width:100%; height:auto; border-radius:3px; display:block;
+  object-fit:cover; aspect-ratio:900/1120;
+}
+.photo-tick{
+  position:absolute; top:-1px; left:24px; width:1px; height:14px;
+  background:var(--gold); z-index:2;
+}
+.photo-caption{
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:10px 4px 2px;
+  font-family:var(--mono);
+}
+.photo-caption .pc-name{ font-size:12.5px; font-weight:600; color:var(--ink); }
+.photo-caption .pc-loc{ font-size:11px; color:var(--teal); }
 
 .eyebrow{
   font-family:var(--mono); font-size:12.5px; letter-spacing:0.12em;
@@ -122,8 +155,8 @@ nav.wrap{
 }
 
 .hero h1{
-  font-family:var(--display); font-weight:600; font-size:clamp(2.4rem, 5.4vw, 4.1rem);
-  line-height:1.08; letter-spacing:-0.01em; max-width:15ch;
+  font-family:var(--display); font-weight:600; font-size:clamp(2.2rem, 4.6vw, 3.7rem);
+  line-height:1.1; letter-spacing:-0.01em; max-width:16ch;
   margin-bottom:26px;
 }
 .hero h1 em{
@@ -131,10 +164,10 @@ nav.wrap{
 }
 
 .hero p.lede{
-  font-size:1.15rem; color:var(--ink-soft); max-width:56ch; margin-bottom:36px;
+  font-size:1.1rem; color:var(--ink-soft); max-width:56ch; margin-bottom:36px;
 }
 
-.cta-row{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:64px; }
+.cta-row{ display:flex; gap:16px; flex-wrap:wrap; margin-bottom:0; }
 .btn{
   font-family:var(--mono); font-size:13px; letter-spacing:0.03em;
   text-decoration:none; padding:13px 22px; border-radius:3px;
